@@ -74,12 +74,12 @@ const Contact = () => {
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen h-auto flex items-center justify-center flex-col">
-        <img src={terminalContact} alt="terminal-bg" className="hidden md:block absolute inset-0 min-h-screen h-fit" />
+      <div className="relative min-h-fit flex justify-center items-center">
+        <img src={terminalContact} alt="terminal-bg" className="hidden md:block absolute inset-0 min-h-fit" />
 
         <div className="contact-container">
           <h3 className="head-text mt-10">Let&apos;s talk</h3>
-          <p className="text-lg text-white-600 mt-3">
+          <p className="text-base text-white-600 mt-3">
             Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
             life, I’m here to help.
           </p>

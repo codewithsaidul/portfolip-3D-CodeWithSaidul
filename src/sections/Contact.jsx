@@ -26,7 +26,6 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log(form.name, form.email, form.message)
 
     emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -75,8 +74,8 @@ const Contact = () => {
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img src={terminalContact} alt="terminal-bg" className="hidden md:block absolute inset-0 min-h-screen" />
+      <div className="relative min-h-screen h-auto flex items-center justify-center flex-col">
+        <img src={terminalContact} alt="terminal-bg" className="hidden md:block absolute inset-0 min-h-screen h-fit" />
 
         <div className="contact-container">
           <h3 className="head-text mt-10">Let&apos;s talk</h3>
@@ -85,7 +84,7 @@ const Contact = () => {
             life, I’m here to help.
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
+          <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-5">
             <label className="space-y-3">
               <span className="field-label">Full Name</span>
               <input

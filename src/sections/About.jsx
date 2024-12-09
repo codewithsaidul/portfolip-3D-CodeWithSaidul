@@ -10,15 +10,25 @@ import { useState } from "react";
 
 const About = () => {
 
-    const [hasCopied, setHasCopied] = useState(false);
+    const [hasCopiedEmail, setHasCopiedEmail] = useState(false);
+    const [hasCopiedPhone, setHasCopiedPhone] = useState(false);
 
-    const handleCopy = () => {
-        navigator.clipboard.writeText("codewithsaidul@gmail.com");
+    const handleCopyPhone = () => {
+        navigator.clipboard.writeText("+880 1763079580");
 
-        setHasCopied(true);
+        setHasCopiedPhone(true);
 
         setTimeout(() => {
-            setHasCopied(false);
+          setHasCopiedPhone(false);
+        }, 2000);
+    }
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText("codewithsaidul@gmail.com");
+
+        setHasCopiedEmail(true);
+
+        setTimeout(() => {
+          setHasCopiedEmail(false);
         }, 2000);
     }
 
@@ -79,13 +89,13 @@ const About = () => {
                 showAtmosphere
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                // labelsData={[{
-                //     lat: 24.8829873,
-                //     lng: 91.8641605,
-                //     text: "I'm Here",
-                //     size: 60,
-                //     color: "white"
-                // }]}
+                labelsData={[{
+                    lat: 24.8829873,
+                    lng: 91.8641605,
+                    text: "Sylhet, Bangladesh",
+                    size: 60,
+                    color: "white"
+                }]}
               />
             </div>
 
@@ -137,9 +147,15 @@ const About = () => {
             <div className="space-y-2">
               <h3 className="grid-subtext text-center">Contact Me</h3>
 
-              <div className="copy-container" onClick={handleCopy}>
-                <img src={hasCopied ? tickIcon : copyIcon} alt= {hasCopied ? "Copied CodeWithSaidul" : "Copy CodeWithSaidul"} />
-                <p className="text-xl md:text-xl lg:text-2xl font-medium text-gray_gradient text-white">codewithsaidul@gmail.com</p>
+              <div className="flex flex-col gap-2">
+                <div className="copy-container" onClick={handleCopyEmail}>
+                  <img src={hasCopiedEmail ? tickIcon : copyIcon} alt= {hasCopiedEmail ? "Copied CodeWithSaidul" : "Copy CodeWithSaidul"} />
+                  <p className="text-xl md:text-xl lg:text-2xl font-medium text-gray_gradient text-white">codewithsaidul@gmail.com</p>
+                </div>
+                <div className="copy-container" onClick={handleCopyPhone}>
+                  <img src={hasCopiedPhone ? tickIcon : copyIcon} alt= {hasCopiedPhone ? "Copied CodeWithSaidul" : "Copy CodeWithSaidul"} />
+                  <p className="text-xl  font-medium text-gray_gradient text-white">Whatsapp: +880 1763079580</p>
+                </div>
               </div>
             </div>
           </div>

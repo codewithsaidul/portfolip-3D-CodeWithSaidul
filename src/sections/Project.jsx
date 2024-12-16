@@ -9,6 +9,7 @@ import { Center, OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/DemoComputer";
 
+
 const Project = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
@@ -41,7 +42,7 @@ const Project = () => {
             />
           </div>
 
-          <div
+          {/* <div
             className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
             style={currentProject.logoStyle}
           >
@@ -50,7 +51,7 @@ const Project = () => {
               alt="project logo"
               className="w-10 h-10 shadow-sm"
             />
-          </div>
+          </div> */}
 
           <div className="flex flex-col gap-5 text-white-600 my-5">
             <h3 className="text-white text-2xl font-semibold animatedText">
